@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6 mt-lg-5">
+            <form action="" (ngSubmit)="insertData()">
+                <h2 align="center">User Registration</h2>
+                <mat-form-field appearance="standard" class="example-form">
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="First Name" required [(ngModel)]="res.f_name" name="f_name">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="standard" class="example-form">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Last Name Name" required [(ngModel)]="res.l_name" name="l_name">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" required [(ngModel)]="res.dob" name="dob">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <br>
+                <mat-radio-group aria-label="Select an option" name="gender" [(ngModel)]="res.gender">
+                    <mat-radio-button value="Male" required>Male</mat-radio-button>
+                    <mat-radio-button value="Female" required>Female</mat-radio-button>
+                </mat-radio-group>
+                <br>
+                <mat-form-field appearance="standard" class="example-form">
+                    <mat-label>E-mail ID</mat-label>
+                    <input matInput placeholder="E-mail" required [(ngModel)]="res.email" name="email">
+                </mat-form-field>
+                <br>
+                <button mat-raised-button color="Accent">Register</button> &nbsp;&nbsp;&nbsp;
+                <button mat-raised-button color="warn">Cancel</button> <br>{{message}}
+            </form>
+
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>

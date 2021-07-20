@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="col-lg-3">
+
+    </div>
+    <div class="col-lg-6 mt-lg-5 mx-auto">
+        <h1>Login</h1>
+
+        <form>
+            <div class="form-group mt-lg-5">
+                <label for="user"><b>User Name</b></label>
+                <input type="text" class="form-control" id="user" name="user" [(ngModel)]="user">
+            </div>
+            <div class="form-group">
+                <label for="Password1"><b>Password</b></label>
+                <input type="password" class="form-control" id="Password1" name="password" [(ngModel)]="password">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-success btn-sm" (click)="loginfunction()">Sign In</button> <br>
+                <br>
+                <div style="color: green;">
+                    {{message}}
+                </div>
+                <div style="color: red;">
+                    {{messagefail}}
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-3">
+
+    </div>
+</div>
+
+
+<!-- 
+<hr>
+
+<input type="text" [id]="myid" [disabled]="mytestfun">
+<button (click)="testfun()">Click</button>
+
+<hr>
+
+<input type="text" [(ngModel)]="favcolor">
+<button (click)="printfavcolor()">click</button>
+<div [style.background-color]='favcolor'>
+
+</div>
+<br> {{favcolor}} -->
+
+
+
+<h1 *ngIf="true">Demo ng if</h1>
+
+
+<hr>
+
+<h1 *ngIf="false; else elseblock">ng Else Block</h1>
+<ng-template #elseblock>
+    <h1>inside else block</h1>
+</ng-template>
+
+
+<div *ngIf="displaysettings; then ifblock; else elseblock">
+
+</div>
+<ng-template #ifblock>
+    <h1>IF BLOCK</h1>
+</ng-template>
+<ng-template #elseblock>
+    <h1>ELSE BLOCK</h1>
+</ng-template>

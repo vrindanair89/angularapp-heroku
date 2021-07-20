@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row mt-lg-5">
+        <div class="col-lg-4">
+            <div class="list-group">
+                <a (click)="homefunction()" class="list-group-item list-group-item-action">SwitchCase</a>
+                <a (click)="galleryfunction()" class="list-group-item list-group-item-action">Array</a>
+                <a (click)="contactfunction()" class="list-group-item list-group-item-action">Contact</a>
+                <a (click)="aboutfunction()" class="list-group-item list-group-item-action">About</a>
+
+            </div>
+        </div>
+        <div class="col-lg-8">
+
+            <div *ngIf="displayhome">
+                <h1>Switch Example</h1>
+                <hr>
+                <select name="colorselector" id="" [(ngModel)]="optionselected">
+                    <option value="" selected>Pick a Color</option>
+                    <option value="purple">Purple</option>
+                    <option value="blue">Blue</option>
+                    <option value="black">Black</option>
+                    <option value="green">Green</option>
+                    <option value="orange">Orange</option>
+                </select>
+                <br><br>
+                <div [ngSwitch]="optionselected">
+                    <div class="divstyle" *ngSwitchCase="'purple'" [style.background-color]="optionselected">Selected PURPLE</div>
+                    <div class="divstyle" *ngSwitchCase="'blue'" [style.background-color]="optionselected">Selected BLUE</div>
+                    <div class="divstyle" *ngSwitchCase="'black'" [style.background-color]="optionselected">Selected BLACK</div>
+                    <div class="divstyle" *ngSwitchCase="'green'" [style.background-color]="optionselected">Selected GREEN</div>
+                    <div class="divstyle" *ngSwitchCase="'orange'" [style.background-color]="optionselected">Selected ORANGE</div>
+
+                </div>
+            </div>
+
+
+
+
+            <div *ngIf="displaygallery">
+                <h1>Array</h1>
+                <hr>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Place</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let x of studentlist index as i">
+                            <td>{{x.name}}</td>
+                            <td>{{x.place}}</td>
+                            <td>{{x.contact}}</td>
+                            <td><button class="btn btn-danger btn-sm" (click)="deletefun(i)">Delete</button></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <div *ngIf="displaycontact ">
+                <h1>Contact</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique nostrum, totam maiores sunt, id sed quibusdam atque cupiditate eveniet quas nesciunt nam veritatis repellat vel odio explicabo obcaecati assumenda voluptatum?</p>
+            </div>
+
+
+
+            <div *ngIf="displayabout ">
+                <h1>About</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique nostrum, totam maiores sunt, id sed quibusdam atque cupiditate eveniet quas nesciunt nam veritatis repellat vel odio explicabo obcaecati assumenda voluptatum?</p>
+            </div>
+        </div>
+    </div>
+</div>
