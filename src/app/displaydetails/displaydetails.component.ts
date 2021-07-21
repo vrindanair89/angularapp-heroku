@@ -17,7 +17,6 @@ displayData(){
   this.displayservice.displayData().subscribe(result=>{
   this.display=result
   this.displayData()
-// console.log(this.display)
   })
 }
 

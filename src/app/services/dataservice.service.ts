@@ -7,6 +7,8 @@ import {HttpClient} from '@angular/common/http'
 export class DataserviceService {
 
   constructor(private client:HttpClient) { }
+
+  
 dataInsert(data:any){
   // console.log(data)
   return this.client.post('http://cybersquare.herokuapp.com/user/',data)
