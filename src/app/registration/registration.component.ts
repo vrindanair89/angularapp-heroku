@@ -24,8 +24,8 @@ insertData(){
   this.dataservice.dataInsert(this.res).subscribe(result=>{
     // console.log(result)
     this.message=result
+    // this.displayData()
   }) 
-
 }
 
 

@@ -20,5 +20,11 @@ displayData(){
   })
 }
 
+deleteData(id:any){
+  this.displayservice.deleteData(id).subscribe(result=>{
+    this.displayData()
+  })
+  
+}
 
 }
